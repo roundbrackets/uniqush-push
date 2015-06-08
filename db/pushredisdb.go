@@ -24,7 +24,7 @@ import (
 	"strings"
 
 	redis "github.com/monnand/goredis"
-	. "github.com/uniqush/uniqush-push/push"
+	. "github.com/roundbrackets/uniqush-push/push"
 )
 
 type PushRedisDB struct {

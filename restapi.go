@@ -29,8 +29,9 @@ import (
 	"sync"
 	"time"
 
+	. "github.com/roundbrackets/uniqush-push/push"
+	"github.com/roundbrackets/uniqush-push/util"
 	"github.com/uniqush/log"
-	. "github.com/uniqush/uniqush-push/push"
 )
 
 type RestAPI struct {
@@ -259,6 +260,7 @@ func (self *RestAPI) pushNotification(reqId string, kv map[string]string, perdp 
 }
 
 func (self *RestAPI) stop(w io.Writer, remoteAddr string) {
+	defer debug.Un(debug.Trace())
 	self.waitGroup.Wait()
 	self.backend.Finalize()
 	self.loggers[LOGGER_WEB].Infof("stopped by %v", remoteAddr)

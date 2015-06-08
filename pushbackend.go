@@ -18,11 +18,11 @@
 package main
 
 import (
+	. "github.com/roundbrackets/uniqush-push/db"
+	. "github.com/roundbrackets/uniqush-push/push"
+	. "github.com/uniqush/log"
 	"sync"
 	"time"
-	. "github.com/uniqush/log"
-	. "github.com/uniqush/uniqush-push/db"
-	. "github.com/uniqush/uniqush-push/push"
 )
 
 type PushBackEnd struct {
